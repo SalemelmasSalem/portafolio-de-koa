@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bocadillos Toggle - Koa Ahata</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h5> Portafolio </h5>
+    <img class="perfil" src="imagen principal2.png">
+    <img src="logo.png" class="logo-principal">
+    <nav>
+      <a href="https://www.instagram.com/koaahata15?igsh=MW1kbWdsMjRkZDNvZg==" class="btn-contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <p class="descripcion"> Soy Koa Āhata, Esposa de Hades, MEGOP/RADIOAPPLE CEO. Dibujo... A veces </p>
+
+<img src="muelde.jpeg" class="decoracion deco1">
+<img src="iconz.png" class="decoracion deco2">
+<img src="deskopp.png" class="decoracion deco3">
+<img src="warning.jpeg" class="decoracion deco4">
+<img src="reminder.jpeg" class="decoracion deco5">
+
+  <div class="botonera">
+    <button onclick="toggleBocadillo(1)">comisiones sfw</button>
+    <button onclick="toggleBocadillo(2)">Comisiones nsfw</button>
+    <button onclick="toggleBocadillo(3)">Arte personal</button>
+    <button onclick="toggleBocadillo(4)">productos</button>
+  </div>
+
+  <div id="overlay1" class="overlay hidden">
+    <div class="bocadillo">
+      <span class="cerrar-bocadillo" onclick="toggleBocadillo(1)">×</span>
+      <div class="contenido-scroll">
+        <img src="comision1.png"> <img src="comision2.png"> <img src="comision3.png">
+        <img src="comision4.png"> <img src="comision5.png"> <img src="comision6.png">
+        <img src="comision7.png"> <img src="comision8.png"> <img src="comision9.png">
+        <img src="comision10.png"> <img src="comision11.png"> <img src="comision12.png">
+        <img src="comision13.png"> <img src="comision14.png"> <img src="comision15.png">
+        <img src="comision16.png"> <img src="comision17.png">
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay2" class="overlay hidden">
+    <div class="bocadillo">
+      <span class="cerrar-bocadillo" onclick="toggleBocadillo(2)">×</span>
+      <div class="contenido-scroll">
+       <img src="comision nsfw.png"> <img src="comision nsfw2.png"> <img src="comision nsfw3.png">
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay3" class="overlay hidden">
+    <div class="bocadillo">
+      <span class="cerrar-bocadillo" onclick="toggleBocadillo(3)">×</span>
+      <div class="contenido-scroll">
+        <img src="personal.png"> <img src="personal2.png"> <img src="personal3.png">
+        <img src="personal4.png"> <img src="personal5.png"> <img src="personal6.png">
+        <img src="personal7.png"> <img src="personal8.png"> <img src="personal9.png">
+        <img src="personal10.png">
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay4" class="overlay hidden">
+    <div class="bocadillo">
+      <span class="cerrar-bocadillo" onclick="toggleBocadillo(4)">×</span>
+      <div class="contenido-scroll">
+        <img src="producto.png"> <img src="producto2.png"> <img src="producto3.png">
+        <img src="producto4.jpg"> <img src="producto5.jpg"> <img src="producto6.jpg">
+        <img src="producto7.jpg"> <img src="producto8.jpg">
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <h5> 2026 </h5>
+    <p> Derechos reservados a Koa Ahata </p>
+  </footer>
+
+  <script>
+    let overlayActivo = null;
+    function toggleBocadillo(num) {
+      const overlay = document.getElementById("overlay" + num);
+      if (overlayActivo && overlayActivo !== overlay) {
+        overlayActivo.classList.add("hidden");
+      }
+      if (overlay.classList.contains("hidden")) {
+        overlay.classList.remove("hidden");
+        overlayActivo = overlay;
+      } else {
+        overlay.classList.add("hidden");
+        overlayActivo = null;
+      }
+    }
+  </script>
+</body>
+</html>
